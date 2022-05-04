@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Etch-a-Sketch</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <p class="top-text">Etch-a-Sketch</p>
+    </div>
+    <div class="main-container">
+        <div class="element-container">
+            <div class="sketch-container"></div>
+            <div class="options">
+                <form>
+                    <label for="grid-entry">Squares: </label>
+                    <input type="text" name="grid-entry" class="grid-entry">
+                    <input type="submit" class="submit-button">
+                </form>
+                <p class="grid-info">Current grid: 16x16</p>
+                <button class="classic-mode">Classic mode</button>
+                <button class="modern-mode">Modern mode</button>
+                <button class="rainbow-mode">Rainbow mode</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
