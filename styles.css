@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    background-color: #379683;
+}
+
+.header {
+    background-color: #05386B;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    min-height: 7vh;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-text {
+    margin: 0;
+    color: white;
+    font-size: 3vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    padding: 1vw;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.element-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1vh;
+    background-color: #05386B;
+    padding: max(3%, 35px);
+    border-radius: 7vh;
+    margin: 5%;
+    box-shadow: 0px 0px 40px 0px #05386B;
+}
+
+.sketch-container {
+    width: 400px;
+    height: 400px;
+}
+
+.options {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: max(3%, 35px);
+}
+
+.grid-info {
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+button {
+    height: 15%;
+    width: 100%;
+    border-radius: 40px;
+    border: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #5CDB95;
+    box-shadow: 0px 0px 10px 2px #5cdb9563;
+}
+
+form {
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label {
+    margin: 0;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.grid-entry {
+    border: none;
+    border-radius: 15px;
+    height: 3vh;
+    width: 30%;
+    min-width: 50px;
+}
+
+.submit-button {
+    border: none;
+    border-radius: 15px;
+    height: 3.3vh;
+    width: 25%;
+    font-size: 12px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: #5CDB95;
+    box-shadow: 0px 0px 10px 2px #5cdb9546;
+}
