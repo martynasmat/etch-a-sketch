@@ -1,33 +1,3 @@
-function normalHover() {
-    let sketchContainer = document.querySelector('.sketch-container');
-    let rows = sketchContainer.children;
-    rows = Array.from(rows);
-    rows.forEach((row) => {
-        let squares = row.children;
-        squares = Array.from(squares);
-        squares.forEach((square) => {
-            square.addEventListener('mouseenter', (e) => {
-                e.currentTarget.style.backgroundColor = 'black';
-                });
-            });
-    });
-}
-
-function modernHover() {
-    let sketchContainer = document.querySelector('.sketch-container');
-    let rows = sketchContainer.children;
-    rows = Array.from(rows);
-    rows.forEach((row) => {
-        let squares = row.children;
-        squares = Array.from(squares);
-        squares.forEach((square) => {
-            square.addEventListener('mouseenter', (e) => {
-                e.currentTarget.style.backgroundColor = 'black';
-                });
-            });
-    });
-}
-
 function changeGrid(){
     removeGrid();
     let message = document.querySelector('.grid-info');
@@ -60,7 +30,6 @@ function createGrid(squares) {
         let sketchContainer = document.querySelector('.sketch-container');
         sketchContainer.appendChild(row);
     };
-    normalHover();
 }
 
 function removeGrid() {
@@ -70,8 +39,72 @@ function removeGrid() {
     };
 }
 
+function normalHover() {
+    changeGrid();
+    let sketchContainer = document.querySelector('.sketch-container');
+    let rows = sketchContainer.children;
+    rows = Array.from(rows);
+    rows.forEach((row) => {
+        let squares = row.children;
+        squares = Array.from(squares);
+        squares.forEach((square) => {
+            square.addEventListener('mouseenter', (e) => {
+                e.currentTarget.style.backgroundColor = 'rgb(0, 0, 0)';
+                });
+            });
+    });
+}
+
+function modernHover() {
+    changeGrid();
+    let sketchContainer = document.querySelector('.sketch-container');
+    let rows = sketchContainer.children;
+    rows = Array.from(rows);
+    rows.forEach((row) => {
+        let squares = row.children;
+        squares = Array.from(squares);
+        squares.forEach((square) => {
+            square.addEventListener('mouseenter', (e) => {
+                let currentColor = e.currentTarget.style.backgroundColor.slice(3);
+                currentColor = currentColor.replaceAll(' ', '');
+                currentColor = currentColor.replaceAll('(', '');
+                currentColor = currentColor.replaceAll(')', '');
+                currentColor = currentColor.split(',');
+                e.currentTarget.style.backgroundColor = `rgb(${parseInt(currentColor[0]) - 50}, ${parseInt(currentColor[1]) - 50}, ${parseInt(currentColor[2]) - 50})`;
+                });
+            });
+    });
+}
+
+function rainbowHover() {
+    changeGrid();
+    let sketchContainer = document.querySelector('.sketch-container');
+    let rows = sketchContainer.children;
+    rows = Array.from(rows);
+    rows.forEach((row) => {
+        let squares = row.children;
+        squares = Array.from(squares);
+        squares.forEach((square) => {
+            square.addEventListener('mouseenter', (e) => {
+                e.currentTarget.style.backgroundColor = `rgb(${Math.floor(Math.random() * 155) + 100}, ${Math.floor(Math.random() * 155) + 100}, ${Math.floor(Math.random() * 155) + 100})`;
+                });
+            });
+    });
+}
+
+function clearGrid() {
+    let sketchContainer = document.querySelector('.sketch-container');
+    let rows = sketchContainer.children;
+    rows = Array.from(rows);
+    for(let i = 0; i < rows.length; i++) {
+        let squares = rows[i].children;
+        squares = Array.from(squares);
+        for(let j = 0; j < squares.length; j++) {
+            squares[j].style.backgroundColor = "rgb(255, 255, 255)";
+        };
+    };
+}
 
 let form = document.querySelector(".grid-select");
 form.addEventListener('submit', (e) => e.preventDefault());
 createGrid(16);
-normalHover();
