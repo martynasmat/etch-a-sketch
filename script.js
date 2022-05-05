@@ -13,7 +13,6 @@ function changeGrid(){
 }
 
 function createGrid(squares) {
-    removeGrid();
     for(let i = 0; i < squares; i++) {
         let row = document.createElement('div');
         row.classList.add('row');
